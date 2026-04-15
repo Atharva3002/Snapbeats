@@ -1,0 +1,101 @@
+.page { padding: 36px 36px 64px; min-height: 100vh; max-width: 900px; }
+
+.header { margin-bottom: 28px; }
+.pageTitle { font-size: 1.7rem; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 6px; }
+.pageSub   { color: var(--text-2); font-size: 0.88rem; }
+
+.form { display: flex; flex-direction: column; gap: 24px; }
+
+/* Drop zone */
+.dropZone {
+  border: 2px dashed var(--border-2);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  cursor: pointer;
+  transition: var(--transition);
+  overflow: hidden;
+}
+.dropZone:hover { border-color: var(--accent); background: var(--accent-dim); }
+.dragOver       { border-color: var(--accent) !important; background: var(--accent-dim) !important; }
+.hasFile        { cursor: default; border-style: solid; border-color: var(--border); }
+
+.dropPrompt {
+  display: flex; flex-direction: column; align-items: center;
+  gap: 8px; padding: 52px 24px; text-align: center;
+}
+.dropIcon { font-size: 2rem; color: var(--accent); }
+.dropText { font-family: var(--font-display); font-size: 1rem; font-weight: 700; }
+.dropSub  { font-size: 0.82rem; color: var(--text-2); }
+.dropRule { font-size: 0.78rem; color: var(--accent); font-weight: 500; background: var(--accent-dim); padding: 4px 14px; border-radius: 99px; }
+
+.videoPreviewWrap {
+  display: flex; flex-direction: column; gap: 12px; padding: 16px;
+}
+.videoPreview { width: 100%; border-radius: var(--radius-md); max-height: 320px; background: #000; }
+.fileInfo { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.fileName { font-size: 0.88rem; font-weight: 500; color: var(--text-1); }
+.fileSize { font-size: 0.78rem; color: var(--text-3); }
+.changeFile {
+  margin-left: auto;
+  background: none; border: 1px solid var(--border-2);
+  border-radius: var(--radius-sm); padding: 5px 12px;
+  font-size: 0.78rem; color: var(--text-2); cursor: pointer;
+  transition: var(--transition);
+}
+.changeFile:hover { border-color: var(--accent); color: var(--accent); }
+
+/* Fields grid */
+.fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+.leftFields, .rightFields { display: flex; flex-direction: column; gap: 18px; }
+
+.field { display: flex; flex-direction: column; gap: 7px; position: relative; }
+.label {
+  font-size: 0.78rem; font-weight: 600; color: var(--text-2);
+  text-transform: uppercase; letter-spacing: 0.06em;
+  display: flex; align-items: center; gap: 6px;
+}
+.required { color: var(--accent); }
+.charCount { font-size: 0.7rem; color: var(--text-3); text-align: right; }
+.hint { font-size: 0.75rem; color: var(--text-3); }
+.durationError { color: var(--danger); font-weight: 500; }
+.tagCount { font-size: 0.72rem; color: var(--accent); margin-left: auto; font-weight: 500; }
+
+.textarea { resize: vertical; min-height: 100px; font-family: var(--font-body); line-height: 1.6; }
+
+/* Mood tags */
+.moodGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 7px;
+}
+.moodTag {
+  padding: 9px 12px;
+  border-radius: var(--radius-md);
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  color: var(--text-2);
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+  text-align: center;
+}
+.moodTag:hover { border-color: var(--border-2); color: var(--text-1); }
+.moodTagActive { background: var(--accent-dim) !important; border-color: var(--accent) !important; color: var(--accent) !important; }
+
+/* Progress */
+.progressWrap { display: flex; flex-direction: column; gap: 8px; }
+.progressBar  { height: 6px; background: var(--border); border-radius: 3px; overflow: hidden; }
+.progressFill { height: 100%; background: var(--accent); border-radius: 3px; transition: width 0.3s ease; }
+.progressText { font-size: 0.82rem; color: var(--text-2); }
+
+.actions {
+  display: flex; justify-content: flex-end; gap: 12px;
+  padding-top: 8px; border-top: 1px solid var(--border);
+}
